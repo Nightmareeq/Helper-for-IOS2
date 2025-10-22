@@ -113,7 +113,7 @@ def get_model(message):
 @bot.callback_query_handler(func=lambda call: True)
 def helper(call):
     if call.data == 'help':
-        bot.send_message(call.message.chat.id, 'Если у тебя возникли вопросы или нужна помощь, не стесняйся — свяжись с @helppios_1, и он обязательно поможет разобраться.')
+        bot.send_message(call.message.chat.id, 'Если у тебя возникли вопросы или нужна помощь, не стесняйся — свяжись с @iosss_admin, и он обязательно поможет разобраться.')
 
 @bot.message_handler(commands=['block'])
 def finish_cmd(message):
@@ -197,6 +197,7 @@ def universal(message):
 
 
 bot.polling()
+
 
 
 
