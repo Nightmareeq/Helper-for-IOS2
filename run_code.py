@@ -1,7 +1,7 @@
 import telebot
 from telebot import types
 
-bot = telebot.TeleBot('8220455020:AAGvMJbZHwKRfmSqAWD3eXketVur4m1KZ1g')
+bot = telebot.TeleBot('8220455020:AAHEFTHsd0FbZX9FmByCEopvygVQyWgMGyQ')
 
 data = {}
 username_index = {}
@@ -197,6 +197,7 @@ def universal(message):
 
 
 bot.polling()
+
 
 
 
