@@ -2,7 +2,7 @@ import time
 import telebot
 from telebot import types
 
-bot = telebot.TeleBot('8542819475:AAEpy4aXEZvrlynOpCMTGi57gsWRupOhiJo')
+bot = telebot.TeleBot('8470495923:AAG3MMzaCxAMo594WMwOEadXNgUbdlfnYNw')
 
 data = {}
 username_index = {}
@@ -203,6 +203,7 @@ while True:
     except Exception as e:
         print(f"Ошибка в polling: {e}")
         time.sleep(3)
+
 
 
 
